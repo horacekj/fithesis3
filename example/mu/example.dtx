@@ -8,22 +8,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-  digital, %% This option enables the default options for the
+  digital, %% The `digital` option enables the default options for the
            %% digital version of a document. Replace with `printed`
            %% to enable the default options for the printed version
            %% of a document.
-  twoside, %% This option enables double-sided typesetting. Use at
-           %% least 120 g/m² paper to prevent show-through. Replace
-           %% with `oneside` to use one-sided typesetting; use only
-           %% if you don’t have access to a double-sided printer,
-           %% or if one-sided typesetting is a formal requirement
-           %% at your faculty.
-  table,   %% This option causes the coloring of tables. Replace
-           %% with `notable` to restore plain LaTeX tables.
-  lof,     %% This option prints the List of Figures. Replace with
-           %% `nolof` to hide the List of Figures.
-  lot,     %% This option prints the List of Tables. Replace with
-           %% `nolot` to hide the List of Tables.
+%%  color,   %% Uncomment these lines (by removing the %% at the
+%%           %% beginning) to use color in the digital version of your
+%%           %% document
+  table,   %% The `table` option causes the coloring of tables.
+           %% Replace with `notable` to restore plain LaTeX tables.
+  twoside, %% The `twoside` option enables double-sided typesetting.
+           %% Use at least 120 g/m² paper to prevent show-through.
+           %% Replace with `oneside` to use one-sided typesetting;
+           %% use only if you don’t have access to a double-sided
+           %% printer, or if one-sided typesetting is a formal
+           %% requirement at your faculty.
+  lof,     %% The `lof` option prints the List of Figures. Replace
+           %% with `nolof` to hide the List of Figures.
+  lot,     %% The `lot` option prints the List of Tables. Replace
+           %% with `nolot` to hide the List of Tables.
   %% More options are listed in the user guide at
 %<*econ>
   %% <http://mirrors.ctan.org/macros/latex/contrib/fithesis/guide/mu/econ.pdf>.
@@ -86,7 +89,7 @@
 \setmainlanguage{english} %% main locale instead of `english`, you
 %% can typeset the thesis in either Czech or Slovak, respectively.
 \setotherlanguages{german, russian, czech, slovak} %% The
-% additional keys allow foreign texts to be typeset as follows:
+%% additional keys allow foreign texts to be typeset as follows:
 %%
 %%   \begin{otherlanguage}{german}  ... \end{otherlanguage}
 %%   \begin{otherlanguage}{russian} ... \end{otherlanguage}
@@ -110,28 +113,30 @@
     department         = Department of Finance,
     author             = Jane Doe,
     gender             = f,
-    advisor            = John Smith,
+    advisor            = {Prof. RNDr. John Smith, CSc.},
     extra              = {
-      advisorCsGenitiv = {Johna Smithe},
-      advisorSkGenitiv = {Johna Smitha},
+      advisorCsGenitiv = Johna Smithe,
+      advisorSkGenitiv = Johna Smitha,
     },
     title              = The Economic Value of LaTeX,
     TeXtitle           = The Economic Value of \LaTeX,
     keywords           = {keyword1, keyword2, ...},
     TeXkeywords        = {keyword1, keyword2, \ldots},
-    abstract           = {This is the abstract of my thesis, which
-                          can
+    abstract           = {%
+      This is the abstract of my thesis, which can
 
-                          span multiple paragraphs.},
-    thanks             = {These are the acknowledgements for my
-                          thesis, which can
+      span multiple paragraphs.
+    },
+    thanks             = {%
+      These are the acknowledgements for my thesis, which can
 
-                          span multiple paragraphs.},
+      span multiple paragraphs.
+    },
     bib                = example.bib,
-    %% Uncomment the following line (by removing the % symbol at
-    %% the beginning) and replace `assignment.pdf` with the
-    %% filename of your scanned thesis assignment.
-    % assignment    = assignment.pdf,
+    %% Uncomment the following line (by removing the %% at the
+    %% beginning) and replace `assignment.pdf` with the filename
+    %% of your scanned thesis assignment.
+%%    assignment         = assignment.pdf,
     %% The following keys are only useful, when you're using a
     %% locale other than English. You can safely omit them in an
     %% English thesis.
@@ -139,49 +144,58 @@
     TeXtitleEn         = The Economic Value of \LaTeX,
     keywordsEn         = {keyword1, keyword2, ...},
     TeXkeywordsEn      = {keyword1, keyword2, \ldots},
-    abstractEn         = {This is the English abstract of my
-                          thesis, which can
+    abstractEn         = {%
+      This is the English abstract of my thesis, which can
 
-                          span multiple paragraphs.},
+      span multiple paragraphs.
+    },
 }
 %</econ>
 %<*fi>
 \thesissetup{
-    date          = \the\year/\the\month/\the\day,
-    university    = mu,
-    faculty       = fi,
-    type          = bc,
-    author        = Jane Doe,
-    gender        = f,
-    advisor       = John Smith,
-    title         = {The Proof of P = NP},
-    TeXtitle      = {The Proof of $\mathsf{P}=\mathsf{NP}$},
-    keywords      = {keyword1, keyword2, ...},
-    TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
+    date        = \the\year/\the\month/\the\day,
+    university  = mu,
+    faculty     = fi,
+    type        = bc,
+    author      = Jane Doe,
+    gender      = f,
+    advisor     = {Prof. RNDr. John Smith, CSc.},
+    title       = {The Proof of P = NP},
+    TeXtitle    = {The Proof of $\mathsf{P}=\mathsf{NP}$},
+    keywords    = {keyword1, keyword2, ...},
+    TeXkeywords = {keyword1, keyword2, \ldots},
+    abstract    = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    thanks        = {These are the acknowledgements for my thesis, which can
+      span multiple paragraphs.
+    },
+    thanks      = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
-    bib           = example.bib,
+      span multiple paragraphs.
+    },
+    bib         = example.bib,
+    %% Uncomment the following line (by removing the %% at the
+    %% beginning) and replace `assignment.pdf` with the filename
+    %% of your scanned thesis assignment.
+%%    assignment         = assignment.pdf,
 }
 %</fi>
 %<*fsps>
 \thesissetup{
-    date          = \the\year/\the\month/\the\day,
-    university    = mu,
-    faculty       = fsps,
-    type          = bc,
-    field         = Sport Management,
-    author        = Jane Doe,
-    gender        = f,
-    advisor       = John Smith,
-    title         = The use of LaTeX for the Typesetting
-                    of Sports Tables,
-    TeXtitle      = The use of \LaTeX\ for the Typesetting
-                    of Sports Tables,
-    bib           = example.bib,
+    date       = \the\year/\the\month/\the\day,
+    university = mu,
+    faculty    = fsps,
+    type       = bc,
+    field      = Sport Management,
+    author     = Jane Doe,
+    gender     = f,
+    advisor    = {Prof. RNDr. John Smith, CSc.},
+    title      = The use of LaTeX for the Typesetting
+                 of Sports Tables,
+    TeXtitle   = The use of \LaTeX\ for the Typesetting
+                 of Sports Tables,
+    bib        = example.bib,
 }
 %</fsps>
 %<*fss>
@@ -192,28 +206,33 @@
     type          = bc,
     author        = Jane Doe,
     gender        = f,
-    advisor       = John Smith,
     title         = LaTeX and Its Impact on the
                     Information Society,
     TeXtitle      = \LaTeX\ and Its Impact on the
                     Information Society,
     keywords      = {keyword1, keyword2, ...},
     TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
+    abstract      = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    thanks        = {These are the acknowledgements for my thesis, which can
+      span multiple paragraphs.
+    },
+    thanks        = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
     bib           = example.bib,
     %% The following keys are only useful, when you're using a
     %% locale other than English. You can safely omit them in an
     %% English thesis.
     keywordsEn    = {keyword1, keyword2, ...},
     TeXkeywordsEn = {keyword1, keyword2, \ldots},
-    abstractEn    = {This is the English abstract of my thesis, which can
+    abstractEn    = {%
+      This is the English abstract of my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
 }
 %</fss>
 %<*law>
@@ -225,28 +244,33 @@
     type          = bc,
     author        = Jane Doe,
     gender        = f,
-    advisor       = John Smith,
     title         = The Legal Aspects of the LaTeX Project
                     Public License,
     TeXtitle      = The Legal Aspects of the \LaTeX\ Project
                     Public License,
     keywords      = {keyword1, keyword2, ...},
     TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
+    abstract      = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    thanks        = {These are the acknowledgements for my thesis, which can
+      span multiple paragraphs.
+    },
+    thanks        = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
     bib           = example.bib,
     %% The following keys are only useful, when you're using a
     %% locale other than English. You can safely omit them in an
     %% English thesis.
     keywordsEn    = {keyword1, keyword2, ...},
     TeXkeywordsEn = {keyword1, keyword2, \ldots},
-    abstractEn    = {This is the English abstract of my thesis, which can
+    abstractEn    = {%
+      This is the English abstract of my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
 }
 %</law>
 %<*med>
@@ -260,28 +284,34 @@
     type          = bc,
     author        = Jane Doe,
     gender        = f,
-    advisor       = John Smith,
+    advisor       = {Prof. RNDr. John Smith, CSc.},
     title         = The Curative Effects of Good
                     Typography on the Quality of Sight,
     TeXtitle      = The Curative Effects of Good\\
                     Typography on the Quality of Sight,
     keywords      = {keyword1, keyword2, ...},
     TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
+    abstract      = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    thanks        = {These are the acknowledgements for my thesis, which can
+      span multiple paragraphs.
+    },
+    thanks        = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
     bib           = example.bib,
     %% The following keys are only useful, when you're using a
     %% locale other than English. You can safely omit them in an
     %% English thesis.
     keywordsEn    = {keyword1, keyword2, ...},
     TeXkeywordsEn = {keyword1, keyword2, \ldots},
-    abstractEn    = {This is the English abstract of my thesis, which can
+    abstractEn    = {%
+      This is the English abstract of my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
 }
 %</med>
 %<*ped>
@@ -293,49 +323,57 @@
     department    = Department of Primary Pedagogy,
     author        = Jane Doe,
     gender        = f,
-    advisor       = John Smith,
+    advisor       = {Prof. RNDr. John Smith, CSc.},
     title         = The Challenges of Teaching LaTeX
                     to Preschool Children,
     TeXtitle      = The Challenges of Teaching \LaTeX\
                     to Preschool Children,
     keywords      = {keyword1, keyword2, ...},
     TeXkeywords   = {keyword1, keyword2, \ldots},
-    abstract      = {This is the abstract of my thesis, which can
+    abstract      = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    thanks        = {These are the acknowledgements for my thesis, which can
+      span multiple paragraphs.
+    },
+    thanks        = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
     bib           = example.bib,
     %% The following keys are only useful, when you're using a
     %% locale other than English. You can safely omit them in an
     %% English thesis.
     keywordsEn    = {keyword1, keyword2, ...},
     TeXkeywordsEn = {keyword1, keyword2, \ldots},
-    abstractEn    = {This is the English abstract of my thesis, which can
+    abstractEn    = {%
+      This is the English abstract of my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
 }
 %</ped>
 %<*phil>
 \thesissetup{
-    date          = \the\year/\the\month/\the\day,
-    university    = mu,
-    faculty       = phil,
-    department    = Department of Psychology,
-    field         = Cognitive Sciences,
-    type          = bc,
-    author        = Jane Doe,
-    gender        = f,
-    advisor       = John Smith,
-    title         = What Can Typography Tell Us
-                    About the Nature of Man,
-    TeXtitle      = What Can Typography Tell Us\\
-                    About the Nature of Man,
-    thanks        = {These are the acknowledgements for my thesis, which can
+    date       = \the\year/\the\month/\the\day,
+    university = mu,
+    faculty    = phil,
+    department = Department of Psychology,
+    field      = Cognitive Sciences,
+    type       = bc,
+    author     = Jane Doe,
+    gender     = f,
+    advisor    = {Prof. RNDr. John Smith, CSc.},
+    title      = What Can Typography Tell Us
+                 About the Nature of Man,
+    TeXtitle   = What Can Typography Tell Us\\
+                 About the Nature of Man,
+    thanks     = {%
+      These are the acknowledgements for my thesis, which can
 
-                     span multiple paragraphs.},
-    bib           = example.bib,
+      span multiple paragraphs.
+    },
+    bib        = example.bib,
 }
 %</phil>
 %<*sci>
@@ -362,7 +400,7 @@
     type            = bc,
     author          = Jane Doe,
     gender          = f,
-    advisor         = John Smith,
+    advisor         = {Prof. RNDr. John Smith, CSc.},
     title           = Princípy matematickej sadzby v programe TeX,
     TeXtitle        = Princípy matematickej sadzby\\v~programe \TeX,
     titleEn         = The Principles of the Typesetting of
@@ -381,25 +419,33 @@
       keywordsCs    = {klíčové slovo 1, klíčové slovo 2, ...},
       TeXkeywordsCs = {klíčové slovo 1, klíčové slovo 2, \ldots},
     },
-    abstract      = {This is the abstract of my thesis, which can
+    abstract      = {%
+      This is the abstract of my thesis, which can
 
-                     span multiple paragraphs.},
-    abstractEn    = {This is the English abstract of my thesis, which can
-
-                     span multiple paragraphs.},
-    extra = {
-      abstractCs   = {This is the Czech abstract of my thesis, which can
-
-                      span multiple paragraphs.},
+      span multiple paragraphs.
     },
-    thanks        = {These are the acknowledgements for my thesis, which can
+    abstractEn    = {%
+      This is the English abstract of my thesis, which can
 
-                     span multiple paragraphs.},
+      span multiple paragraphs.
+    },
+    extra = {
+      abstractCs  = {%
+        This is the Czech abstract of my thesis, which can
+
+        span multiple paragraphs.
+      },
+    },
+    thanks        = {%
+      These are the acknowledgements for my thesis, which can
+
+      span multiple paragraphs.
+    },
     bib           = example.bib,
-    %% Uncomment the following line (by removing the % symbol at
-    %% the beginning) and replace `assignment.pdf` with the
-    %% filename of your scanned thesis assignment.
-    % assignment    = assignment.pdf,
+    %% Uncomment the following line (by removing the %% at the
+    %% beginning) and replace `assignment.pdf` with the filename
+    %% of your scanned thesis assignment.
+%%    assignment         = assignment.pdf,
 }
 %</sci>
 \usepackage{makeidx}      %% The `makeidx` package contains
@@ -411,6 +457,9 @@
 \usepackage{amsfonts}
 \usepackage{url}      %% Hyperlinks
 \usepackage{markdown} %% Lightweight markup
+\usepackage{tabularx} %% Tables
+\usepackage{tabu}
+\usepackage{booktabs}
 \usepackage{listings} %% Source code highlighting
 \lstset{
   basicstyle      = \ttfamily,
@@ -475,6 +524,176 @@ alles gut geht, bekomme ich bald ein Diplom. Wünsch mir Glück!
 %</luatex>
 %<*pdftex>
 }\end{otherlanguage}
+%</pdftex>
+
+\chapter{Using lightweight markup}
+%<*pdftex>
+\shorthandoff{-}
+%</pdftex>
+\begin{markdown*}{%
+  hybrid,
+  definitionLists,
+  footnotes,
+  inlineFootnotes,
+  hashEnumerators,
+  fencedCode,
+  citations,
+  citationNbsps,
+  pipeTables,
+  tableCaptions,
+}
+
+If you decide that \LaTeX{} is too wordy for some parts of your
+document, there are [packages](https://www.ctan.org/pkg/markdown
+"Markdown") that allow you to use more lightweight markup next
+to it.
+
+ ![logo](fithesis/logo/mu/fithesis-base.pdf "The logo of the
+  Masaryk University")
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |   123  |
+|     1 | 1    | 1       |    1   |
+
+: This is a table with different types of alignment.
+
+This is a bullet list. Unlike numbered lists, bulleted lists
+contain an **unordered** set of bullet points. When a bullet point
+contains multiple paragraphs, the list is typeset as follows:
+
+  * The first item of a bullet list
+
+    that spans several paragraphs,
+  * the second item of a bullet list,
+  * the third item of a bullet list.
+
+When none of the bullet points contains multiple paragraphs, the
+list has a more compact form:
+
+  * The first item of a bullet list,
+  * the second item of a bullet list,
+  * the third item of a bullet list.
+
+Unlike a bulleted list, a numbered list implies chronology or
+ordering of the bullet points. When a bullet point
+contains multiple paragraphs, the list is typeset as follows:
+
+  1. The first item of an ordered list
+
+     that spans several paragraphs,
+  2. the second item of an ordered list,
+  3. the third item of an ordered list.
+  #. If you are feeling lazy,
+  #. you can use hash enumerators as well.
+
+When none of the bullet points contains multiple paragraphs, the
+list has a more compact form:
+
+  6. The first item of an ordered list,
+  7. the second item of an ordered list,
+  8. the third item of an ordered list.
+
+Definition lists are used to provide definitions of terms. When
+a definition contains multiple paragraphs, the list is typeset
+as follows:
+
+Term 1
+
+:   Definition 1
+
+*Term 2*
+
+:   Definition 2
+
+        Some code, part of Definition 2
+
+    Third paragraph of Definition 2.
+
+When none of the bullet points contains multiple paragraphs, the
+list has a more compact form:
+
+Term 1
+:   Definition 1
+*Term 2*
+:   Definition 2
+
+Block quotations are used to include an excerpt from an external
+document in way that visually clearly separates the excerpt from
+the rest of the work:
+
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.
+
+Footnotes are used to include additional information to the
+document that are not necessary for the understanding of the main
+text. Here is a footnote reference^[Here is the footnote.] and
+another.[^longnote]
+
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+        Some code
+
+    The whole paragraph can be indented, or just the first
+    line.  In this way, multi-paragraph footnotes work like
+    multi-paragraph list items.
+
+Citations are used to provide bibliographical references to other
+documents. This is a regular citation~[@borgman03, p. 123]. This is
+an in-text citation: @borgman03\. You can also cite several authors
+at once using both regular~[see @borgman03, p. 123; @greenberg98,
+sec.  3.2; and @thanh01] and in-text citations: @borgman03 [p.123;
+@greenberg98, sec. 3.2; @thanh01].
+
+Code blocks are used to include source code listings into the
+document:
+
+    #include <stdio.h>
+    #include <unistd.h>
+    #include <sys/types.h>
+    #include <sys/wait.h>
+    // This is a comment
+    int main(int argc, char **argv)
+    {
+        while (--c > 1 && !fork());
+        sleep(c = atoi(v[c]));
+        printf("%d\n", c);
+        wait(0);
+        return 0;
+    }
+
+There is an alternative syntax for code blocks that allows you to
+specify additional information, such as the language of the source
+code. This information can be used for syntax highlighting:
+
+``` sh
+#!/bin/sh
+fac() {
+  if [ "$1" -leq 1 ]; then
+    echo 1
+  else
+    echo $(("$1" * fac $(("$1" - 1))))
+  fi
+}
+``````````````
+
+~~~~~~ Ruby
+# Here's a way to empty an array.
+joe = [ 'eggs.', 'some', 'break', 'to', 'Have' ]
+print(joe.pop, " ") while joe.size > 0
+print "\n"
+~~~~~~
+
+\end{markdown*}
+%<*pdftex>
+\shorthandon{-}
 %</pdftex>
 
 \chapter{These are}
@@ -747,7 +966,7 @@ f \\
 \end{enumerate}
 For the complete list of environments and commands, consult the
 \textsf{amsmath} package manual\footnote{
-  See \url{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}.
+  See \url{http://mirrors.ctan.org/macros/latex/required/amsmath/amsldoc.pdf}.
   The \texttt{\textbackslash url} command is provided by the
   package \textsf{url}.
 }.
@@ -774,166 +993,6 @@ fonts will become available: \[
 \] Many other mathematical fonts are available\footnote{
   See \url{http://tex.stackexchange.com/a/58124/70941}.
 }.
-
-\chapter{Using lightweight markup}
-%<*pdftex>
-\shorthandoff{-}
-%</pdftex>
-\begin{markdown*}{%
-  hybrid,
-  definitionLists,
-  footnotes,
-  inlineFootnotes,
-  hashEnumerators,
-  fencedCode,
-  citations,
-  citationNbsps,
-}
-
-If you decide that \LaTeX{} is too wordy for some parts of your
-document, there are [packages](https://www.ctan.org/pkg/markdown
-"Markdown") that allow you to use more lightweight markup next
-to it.
-
- ![logo](fithesis/logo/mu/fithesis-base.pdf "The logo of the
-  Masaryk University")
-
-This is a bullet list. Unlike numbered lists, bulleted lists
-contain an **unordered** set of bullet points. When a bullet point
-contains multiple paragraphs, the list is typeset as follows:
-
-  * The first item of a bullet list
-
-    that spans several paragraphs,
-  * the second item of a bullet list,
-  * the third item of a bullet list.
-
-When none of the bullet points contains multiple paragraphs, the
-list has a more compact form:
-
-  * The first item of a bullet list,
-  * the second item of a bullet list,
-  * the third item of a bullet list.
-
-Unlike a bulleted list, a numbered list implies chronology or
-ordering of the bullet points. When a bullet point
-contains multiple paragraphs, the list is typeset as follows:
-
-  1. The first item of an ordered list
-
-     that spans several paragraphs,
-  2. the second item of an ordered list,
-  3. the third item of an ordered list.
-  #. If you are feeling lazy,
-  #. you can use hash enumerators as well.
-
-When none of the bullet points contains multiple paragraphs, the
-list has a more compact form:
-
-  6. The first item of an ordered list,
-  7. the second item of an ordered list,
-  8. the third item of an ordered list.
-
-Definition lists are used to provide definitions of terms. When
-a definition contains multiple paragraphs, the list is typeset
-as follows:
-
-Term 1
-
-:   Definition 1
-
-*Term 2*
-
-:   Definition 2
-    
-        Some code, part of Definition 2
-    
-    Third paragraph of Definition 2.
-
-When none of the bullet points contains multiple paragraphs, the
-list has a more compact form:
-
-Term 1
-:   Definition 1
-*Term 2*
-:   Definition 2
-
-Block quotations are used to include an excerpt from an external
-document in way that visually clearly separates the excerpt from
-the rest of the work:
-
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
-
-Footnotes are used to include additional information to the
-document that are not necessary for the understanding of the main
-text. Here is a footnote reference^[Here is the footnote.] and
-another.[^longnote]
-
-[^longnote]: Here's one with multiple blocks.
-  
-    Subsequent paragraphs are indented to show that they
-belong to the previous footnote.
-  
-        Some code
-
-    The whole paragraph can be indented, or just the first
-    line.  In this way, multi-paragraph footnotes work like
-    multi-paragraph list items.
-
-Citations are used to provide bibliographical references to other
-documents. This is a regular citation~[@borgman03, p. 123]. This is
-an in-text citation: @borgman03\. You can also cite several authors
-at once using both regular~[see @borgman03, p. 123; @greenberg98,
-sec.  3.2; and @thanh01] and in-text citations: @borgman03 [p.123;
-@greenberg98, sec. 3.2; @thanh01].
-
-Code blocks are used to include source code listings into the
-document:
-
-    #include <stdio.h>
-    #include <unistd.h>
-    #include <sys/types.h>
-    #include <sys/wait.h>
-    // This is a comment
-    int main(int argc, char **argv)
-    {
-        while (--c > 1 && !fork());
-        sleep(c = atoi(v[c]));
-        printf("%d\n", c);
-        wait(0);
-        return 0;
-    }
-
-There is an alternative syntax for code blocks that allows you to
-specify additional information, such as the language of the source
-code. This information can be used for syntax highlighting:
-
-``` sh
-#!/bin/sh
-fac() {
-  if [ "$1" -leq 1 ]; then
-    echo 1
-  else
-    echo $(("$1" * fac $(("$1" - 1))))
-  fi
-}
-``````````````
-
-~~~~~~ Ruby
-# Here's a way to empty an array.
-joe = [ 'eggs.', 'some', 'break', 'to', 'Have' ]
-print(joe.pop, " ") while joe.size > 0
-print "\n"
-~~~~~~
-    
-\end{markdown*}
-%<*pdftex>
-\shorthandon{-}
-%</pdftex>
 
 \chapter{Inserting the bibliography}
 After linking a bibliography data\-base files to the document using

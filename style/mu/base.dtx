@@ -1,13 +1,15 @@
 % \iffalse
 %<*base>
 % \fi\file{style/mu/fithesis-base.sty}\label{sec:fithesis-mu-base}
+% \changes{v1.0.0}{2021/02/21}{File were renamed after
+%   breaking changes in package loading after PR 438 in \LaTeXe. [VN]}
 % This is the base style file for theses written at the Masaryk
 % University in Brno. When inheritance is enabled for style files,
 % this file is always the second style file to be loaded right
 % after \texttt{style/fithesis-base.sty}, regardless of the value
 % of the |\thesis@style| macro.
 %    \begin{macrocode}
-\ProvidesPackage{fithesis/style/mu/fithesis-base}[2018/06/15]
+\ProvidesPackage{fithesis/style/mu/fithesis-mu-base}[2021/02/21]
 \NeedsTeXFormat{LaTeX2e}
 %    \end{macrocode}
 % The file recognizes the following options: \begin{itemize}
@@ -430,6 +432,10 @@
       \thesis@bibliography@setup{
         style = iso-numeric,
         sorting = none}
+      % FIXME: This is a hotfix for biblatex.
+      % It should be removed after v3.17 has been released.
+      % See https://tex.stackexchange.com/a/581469/70941.
+      \thesis@require{expl3}
       \thesis@require[
         backend=biber,
         style=\thesis@bibliography@style,
@@ -467,12 +473,20 @@
 %    \end{macrocode}
 % \end{macro} ^^A The nested \ifthesis@bibliography@included@ def
 % \end{macro} ^^A The \thesis@bibliography@load macro definition
-% The \textsf{hyperref} package is configured to support both roman
-% and arabic page numbering in one document and to decorate
-% hyperlinks with an underline instead of a rectangular box.
+% In the digital version, the \textsf{hyperref} package is configured to
+% decorate hyperlinks with an underline instead of a rectangular box.
+% In the printed version, the \textsf{hyperref} package is configured to
+% hide links.
+% \changes{v0.3.51}{2018/12/25}{^^A
+%   In the printed version, the \textsf{hyperref} package is configured to
+%   hide links. [VN]}
 %    \begin{macrocode}
 \thesis@require{hyperref}
-\hypersetup{pdfborderstyle={/S/U/W 1}} % Less obtrusive borders
+\ifthesis@digital@
+  \hypersetup{pdfborderstyle={/S/U/W 1}}
+\else
+  \hypersetup{hidelinks}
+\fi
 %    \end{macrocode}
 % Clubs and widows are set to be infinitely bad.
 %    \begin{macrocode}
@@ -1073,8 +1087,8 @@
 % The rest of the file comprises redefinitions of \LaTeX\ commands
 % and private \texttt{rapport3} class macros altering the layout of
 % the resulting document. Depending on the type size of 10, 11 or
-% 12 points, either the \texttt{fithesis-10.clo},
-% \texttt{fithesis-11.clo} or \texttt{fithesis-12.clo} file is
+% 12 points, either the \texttt{fithesis-mu-10.clo},
+% \texttt{fithesis-mu-11.clo} or \texttt{fithesis-mu-12.clo} file is
 % loaded from the |\thesis@stylepath| |mu| directory, respectively.
 %    \begin{macrocode}
 % Table of contents will contain sectioning commands up to
@@ -1084,7 +1098,11 @@
 % Sections up to \subsection will be numbered.
 \setcounter{secnumdepth}{2}
 
-% Load the `fithesis-1*.clo` size option.
+%    \end{macrocode}
+% \changes{v1.0.0}{2021/02/21}{File were renamed after
+%   breaking changes in package loading after PR 438 in \LaTeXe. [VN]}
+%    \begin{macrocode}
+% Load the `fithesis-mu-1*.clo` size option.
 \input\thesis@stylepath mu/fithesis-1\thesis@ptsize.clo\relax
 
 % Define the running heading style.
@@ -1207,13 +1225,15 @@
 %    \end{macrocode}\iffalse
 %</base>
 % \fi\file{style/mu/fithesis-10.clo}
+% \changes{v1.0.0}{2021/02/21}{File were renamed after
+%   breaking changes in package loading after PR 438 in \LaTeXe. [VN]}
 % This file is conditionally loaded by the
 % \texttt{style/mu/base.sty} file to redefine the page geometry to
 % match the type size of 10 points.
 %    \begin{macrocode}
 %<*opt>
 %<*10pt>
-\ProvidesFile{fithesis/style/mu/fithesis-10.clo}[2016/05/15]
+\ProvidesFile{fithesis/style/mu/fithesis-mu-10.clo}[2021/02/21]
 
 \renewcommand{\normalsize}{\fontsize\@xpt{12}\selectfont
 \abovedisplayskip 10\p@ plus2\p@ minus5\p@
@@ -1251,12 +1271,14 @@
 %</10pt>
 %    \end{macrocode}
 % \file{style/mu/fithesis-11.clo}
+% \changes{v1.0.0}{2021/02/21}{File were renamed after
+%   breaking changes in package loading after PR 438 in \LaTeXe. [VN]}
 % This file is conditionally loaded by the
 % \texttt{style/mu/base.sty} file to redefine the page geometry to
 % match the type size of 11 points.
 %    \begin{macrocode}
 %<*11pt>
-\ProvidesFile{fithesis/style/mu/fithesis-11.clo}[2016/05/15]
+\ProvidesFile{fithesis/style/mu/fithesis-mu-11.clo}[2021/02/21]
 
 \renewcommand{\normalsize}{\fontsize\@xipt{14}\selectfont
 \abovedisplayskip 11\p@ plus3\p@ minus6\p@
@@ -1294,6 +1316,8 @@
 %</11pt>
 %    \end{macrocode}
 % \file{style/mu/fithesis-12.clo}
+% \changes{v1.0.0}{2021/02/21}{File were renamed after
+%   breaking changes in package loading after PR 438 in \LaTeXe. [VN]}
 % This file is conditionally loaded by the
 % \texttt{style/mu/base.sty} file to redefine the page geometry to
 % match the type size of 12 points. The type dimensions defined by
@@ -1325,7 +1349,7 @@
 % should remain constant regardless of the font size setting.
 %    \begin{macrocode}
 %<*12pt>
-\ProvidesFile{fithesis/style/mu/fithesis-12.clo}[2016/05/15]
+\ProvidesFile{fithesis/style/mu/fithesis-mu-12.clo}[2021/02/21]
 %</12pt>
 
 \def\thesis@titlePage@normalsize{\fontsize\@xiipt{14.5}%
